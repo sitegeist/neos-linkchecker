@@ -63,8 +63,8 @@ class ResultItem
     {
         $this->createdAt = new \DateTime();
         $this->checkedAt = new \DateTime();
-        $this->setUrl(UriService::uriToString($url));
-        $this->setOriginUrl(UriService::uriToString($originUrl));
+        $this->setUrl(\mb_substr((string) $url, 0, 2048));
+        $this->setOriginUrl(\mb_substr((string) $originUrl, 0, 2048));
         $this->setStatusCode($statusCode);
     }
 
